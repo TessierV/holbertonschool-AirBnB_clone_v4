@@ -4,10 +4,6 @@ $(document).ready(function(){
     $(amenities_check).change(function() {
         if ($(this).is(':checked')) {
             amenities[$(this).data('id')] = $(this).data('name');
-            $(this).css({
-                'position': 'absolute',
-                'left': ($(this).offset().left - 10) + 'px'
-            });
         } else {
             delete amenities[$(this).data('id')];
         }
