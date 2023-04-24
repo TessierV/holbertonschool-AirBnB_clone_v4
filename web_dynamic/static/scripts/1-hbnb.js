@@ -1,11 +1,3 @@
-// $('document').ready(function () {
-//     // empty list to store Amenity IDs if checked
-//     let amenety_check = [];
-
-//     if ($(.amenities).is("checked")) {
-//         amenety_check.push("data-id");
-//     }
-
 $('document').ready(function () {
   const amenities = {};
   $('input[type="checkbox"]').change(function () {
