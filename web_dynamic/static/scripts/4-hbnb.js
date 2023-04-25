@@ -11,8 +11,25 @@ $(document).ready(function () {
     }
   });
 
+  // checkbox if selected
+  $('input[type="checkbox"]').change(function () {
+    if ($(this).is(':checked')) {
+      amenities[$(this).data('id')] = $(this).data('name');
+    } else {
+      delete amenities[$(this).data('id')];
+    }
+    let amenityNames = Object.values(amenities).join(', ');
+    // small list of amenties check finish by ...
+    if (amenityNames.length > 35) {
+      amenityNames = amenityNames.substring(0, 35) + '...';
+    }
+    $('.amenities h4').text(amenityNames);
+  });
+
   // button search clicked
   $('button').on('click', function () {
+    // each click on search bouton refresh list
+    $('section.places').empty();
     $.ajax({
       type: 'POST',
       url: 'http://127.0.0.1:5001/api/v1/places_search/',
@@ -21,10 +38,13 @@ $(document).ready(function () {
         'Content-Type': 'application/json'
       },
       success: function (data) {
+        // stock id place
+        const addedPlaces = [];
         // foreach place append section in article tag
         data.forEach(function (place) {
-          const article = $('<article>');
-          article.html(
+          if (!addedPlaces.includes(place.name)) {
+            const article = $('<article>');
+            article.html(
               `<div class="title_box">
               <h2>${place.name}</h2>
               <div class="price_by_night">$${place.price_by_night}</div>
@@ -44,21 +64,13 @@ $(document).ready(function () {
             </div>
             <div class="description">${place.description}</div>
             `
-          );
-          $('section.places').append(article);
+            );
+            addedPlaces.push(place.name);
+            // article in $('secion.places') ? '' :
+            $('section.places').append(article);
+          }
         });
       }
     });
-  });
-
-  // checkbox if selected
-  $('input[type="checkbox"]').change(function () {
-    if ($(this).is(':checked')) {
-      amenities[$(this).data('id')] = $(this).data('name');
-    } else {
-      delete amenities[$(this).data('id')];
-    }
-    const amenityNames = Object.values(amenities).join(', ');
-    $('.amenities h4').text(amenityNames);
   });
 });
