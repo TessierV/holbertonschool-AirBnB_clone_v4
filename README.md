@@ -1,5 +1,11 @@
-# AirBnB Clone - The Console
+<img width="450" src="https://user-images.githubusercontent.com/113889290/227171089-94c75343-474e-4f3e-86a3-b69afaf74e50.png">
+
+<h2><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=44&pause=1000&color=CF0000&center=true&vCenter=true&width=735&height=45&lines=The+Console+AirBnb+clone" alt="Typing SVG" /></a></h2><br>
+
 The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+
+---
+<br>
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
@@ -28,7 +34,7 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 * Run hbnb(non-interactively): `echo "<command>" | ./console.py`
 
 ## File Descriptions
-[console.py](console.py) - the console contains the entry point of the command interpreter. 
+#### ▪ [console.py](console.py) - the console contains the entry point of the command interpreter. 
 List of commands this console current supports:
 * `EOF` - exits console 
 * `quit` - exits console
@@ -39,12 +45,13 @@ List of commands this console current supports:
 * `all` - Prints all string representation of all instances based or not on the class name. 
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
 
-#### `models/` directory contains classes used for this project:
+#### ▪ `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
 * `def __init__(self, *args, **kwargs)` - Initialization of the base model
 * `def __str__(self)` - String representation of the BaseModel class
 * `def save(self)` - Updates the attribute `updated_at` with the current datetime
 * `def to_dict(self)` - returns a dictionary containing all keys/values of the instance
+<details><summary>click to read more Example</summary><br>
 
 Classes inherited from Base Model:
 * [amenity.py](/models/amenity.py)
@@ -53,15 +60,16 @@ Classes inherited from Base Model:
 * [review.py](/models/review.py)
 * [state.py](/models/state.py)
 * [user.py](/models/user.py)
+</details>
 
-#### `/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
+#### ▪ `/models/engine` directory contains File Storage class that handles JASON serialization and deserialization :
 [file_storage.py](/models/engine/file_storage.py) - serializes instances to a JSON file & deserializes back to instances
 * `def all(self)` - returns the dictionary __objects
 * `def new(self, obj)` - sets in __objects the obj with key <obj class name>.id
 * `def save(self)` - serializes __objects to the JSON file (path: __file_path)
 * ` def reload(self)` -  deserializes the JSON file to __objects
 
-#### `/tests` directory contains all unit test cases for this project:
+#### ▪ `/tests` directory contains all unit test cases for this project:
 [/test_models/test_base_model.py](/tests/test_models/test_base_model.py) - Contains the TestBaseModel and TestBaseModelDocs classes
 TestBaseModelDocs class:
 * `def setUpClass(cls)`- Set up for the doc tests
@@ -71,6 +79,7 @@ TestBaseModelDocs class:
 * `def test_bm_class_docstring(self)` - Test for the BaseModel class docstring
 * `def test_bm_func_docstrings(self)` - Test for the presence of docstrings in BaseModel methods
 
+<details><summary>click to read more Example</summary><br>
 TestBaseModel class:
 * `def test_is_base_model(self)` - Test that the instatiation of a BaseModel works
 * `def test_created_at_instantiation(self)` - Test created_at is a pub. instance attribute of type datetime
@@ -126,6 +135,7 @@ TestBaseModel class:
 * `def test_user_module_docstring(self)` - Test for the user.py module docstring
 * `def test_user_class_docstring(self)` - Test for the User class docstring
 
+</details>
 
 ## Examples of use
 ```
@@ -157,8 +167,24 @@ No known bugs at this time.
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
-David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
-
-Second part of Airbnb: Joann Vuong
+David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)  
+Second part of Airbnb: Joann Vuong  
+Marianne Arrue - [Github](https://github.com/MarianneHolbie)  
+Vanessa Tessier -  [Github](https://github.com/TessierV)  
 ## License
 Public Domain. No copy write protection. 
+
+<br>
+
+<h3>Students :
+    <a href="https://www.linkedin.com/in/marianne-arrué-01650429/">
+       <img alt="Anurag Hazra | CodeSandbox" height="20px" src="https://img.shields.io/badge/ArrueMarianne-4A6552?style=for-the-badge&logo=linkedin&color=red&logoColor=white" />
+    </a>
+    <a href="https://www.linkedin.com/in/vanessa-tessier-601794252/">
+        <img alt="Anurag Hazra | CodeSandbox" height="20px" src="https://img.shields.io/badge/TessierVanessa-4A6552?style=for-the-badge&logo=linkedin&color=red&logoColor=white"/>
+    </a>
+    </h3>
+<hr>
+<p align="right">Holberton School - TOULOUSE C19 Cohort APRIL. 2023
+</p>
+
