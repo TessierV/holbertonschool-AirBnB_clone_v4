@@ -6,7 +6,11 @@ $('document').ready(function () {
     } else {
       delete amenities[$(this).data('id')];
     }
-    const amenity_names = Object.values(amenities).join(', ');
-    $('.amenities h4').text(amenity_names);
+    let amenityNames = Object.values(amenities).join(', ');
+    // small list of amenties check finish by ...
+    if (amenityNames.length > 35) {
+      amenityNames = amenityNames.substring(0, 35) + '...';
+    }
+    $('.amenities h4').text(amenityNames);
   });
 });
