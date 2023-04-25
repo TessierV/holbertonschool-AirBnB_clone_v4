@@ -20,6 +20,7 @@ header .logo {
     background-color: #CCCCCC;
     transform: translate(-50%, 40%);
 }
+
 #api_status.available{
     background-color: #ff545F;
 }
